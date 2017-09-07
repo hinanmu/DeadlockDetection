@@ -7,8 +7,6 @@
 #include<sstream>
 using namespace std;
 
-
-
 void DeadlockChain(int beg,vector<string> &DeadlockChain_string, vector<int> *have, vector<int> *want, vector<int> Deadlock,bool *visited, bool *Dead_res)
 {
     visited[beg] = true;
@@ -74,7 +72,7 @@ vector<string> simplify(string fileName)
 
 
     vector<string> simplify_msg;
-    simplify_msg.push_back("开始读取资源分配文件......");
+    simplify_msg.push_back("begin read resource allocation graph file......");
     ifstream in;
     in.open(fileName);
     if(!in){
@@ -158,7 +156,7 @@ vector<string> simplify(string fileName)
         }
     }
 
-    simplify_msg.push_back("读取文件结束......");
+    simplify_msg.push_back("read file end......");
 
     simplify_msg.push_back("begin simplify resource allocation graph......");
     //  Draw();
@@ -214,7 +212,7 @@ vector<string> simplify(string fileName)
 
                     stringstream ssTemp;
                     ssTemp<<i;
-                    simplify_msg.push_back("process " + ssTemp.str() + " all resuorce edge have deleted");
+                    simplify_msg.push_back("process " + ssTemp.str() + " all resuorce edges have deleted");
                     have[i].clear();
                     finish[i] = true;
                     flag = true;
@@ -274,8 +272,5 @@ vector<string> simplify(string fileName)
     }
     return simplify_msg;
 }
-
-
-
 
 #endif // SIMPLIFYFUN_H
